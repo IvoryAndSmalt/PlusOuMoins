@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,24 @@
     <title>Jeu plus ou moins</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
     <h2 class="welcomemessage">
         Entrez un nombre pour jouer :)
     </h2>
-
-    <input type="text" id="input" placeholder="Entrez un nombre">
-
+    <input type="text" id="input" placeholder="Entrez un nombre" maxlength="4">
+    <div id="diverreur">
+        <p id="erreurnombre"></p>
+    </div>
+    <button id="valider">Valider</button>
     <p id="chosennumber"></p>
-
     <h1 id="bravo"></h1>
-
     <p>
-        nombre de coups : <span id="counter" type="number"></span>
+        nombre de coups : <span id="coups" type="number"></span>
     </p>
-    
+    <button id="continuer">Continuer</button>
+    <ul id="record"></ul>
+
 </body>
 
 <script src="script.js"></script>

@@ -7,24 +7,29 @@ var bravoMessage = document.getElementById("bravo");
 var valider = document.getElementById("valider");
 var i = 0;
 var manche = 0;
-var coups = document.getElementById("coups");
+var chances = document.getElementById("coups");
 var resultat = "";
+var coups =0;
 
 continuer.style.display = "none";
+valider.style.display= "inline";
+chances.innerHTML = 10-i;
 
 function reroll() {
     keyNumber = Math.floor((Math.random() * 1000) + 1);
     bravoMessage.innerHTML = ("");
     continuer.style.display = "none";
+    valider.style.display= "inline";
     bravoMessage.style.fontSize = "inherit";
-    bravoMessage.style.color = "inherit";
+    bravoMessage.style.color = "yellow";
     manche = manche +1;
     var domli = document.createElement("LI");                
-    var texteli = document.createTextNode("Manche " + manche + " : " + resultat + " en " + coups.innerHTML + " coups.");         
+    var texteli = document.createTextNode("Manche " + manche + " : " + resultat + " en " + coups + " coups.");         
     domli.appendChild(texteli);                              
     document.getElementById("record").appendChild(domli);
     i = 0;
-    coups.innerHTML = i;
+    chances.innerHTML = 10-i;
+    coups = i;
 }
 
 function continuerFonction() {
@@ -37,12 +42,12 @@ function testPlusOuMoins() {
     if (number.value < keyNumber) {
         bravoMessage.innerHTML = ("Plus haut");
         bravoMessage.style.fontSize = "inherit";
-        bravoMessage.style.color = "inherit";
+        bravoMessage.style.color = "yellow";
     }
     else if (number.value > keyNumber) {
         bravoMessage.innerHTML = ("Plus bas");
         bravoMessage.style.fontSize = "inherit";
-        bravoMessage.style.color = "inherit";
+        bravoMessage.style.color = "yellow";
     }
 }
 
@@ -55,17 +60,19 @@ valider.addEventListener("click", function () {
     document.getElementById("erreurnombre").innerHTML ="";
     testPlusOuMoins();
     i++;
-    coups.innerHTML = i;
+    coups = i;
+    chances.innerHTML = 10-i;
     console.log(i);
     if (i > 9 && number.value != keyNumber) {
-        alert("vous avez perdu après " + coups.innerHTML + " essais, recommencez !");
+        alert("vous avez perdu après " + coups + " essais, recommencez !");
         resultat = "Echec";
         reroll();
     }
     else if (number.value == keyNumber) {
-        bravoMessage.innerHTML = ("bravo, vous avez trouvé " + keyNumber + " en " + coups.innerHTML + " coups !");
+        bravoMessage.innerHTML = ("bravo, vous avez trouve la reponse en " + coups + " coups !");
         bravoMessage.style.color = "green";
         bravoMessage.style.fontSize = "35px";
+        valider.style.display = "none";
         resultat = "Victoire";
         continuerFonction();
     }

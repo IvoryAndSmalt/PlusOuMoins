@@ -4,12 +4,14 @@
 */
 
 @font-face{
-
+    font-family: 'Minecraft';
+    src: url(Minecrafter.Reg.ttf);
 }
-@font-face {
-    font-family: DeliciousRoman;
-    src: url(/Delicious-Roman.otf);
-    }
+@font-face{
+    font-family: 'Arcade';
+    src: url(ARCADECLASSIC.ttf);
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -37,7 +39,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    font-family: 'Arcade', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -56,14 +59,22 @@ table {
 }
 
 body{
+    margin-top: 20px;
     text-align: center;
     font-size: 1.8em;
-    color: black;
+    color: white;
+    background: #282828;
 }
 
 p{
     margin-top: 2%;
-    color: black;
+    color: white;
+    font-family: 'Arcade', sans-serif;
+}
+
+h1{
+    font-family: 'Minecraft', sans-serif;
+    font-weight: 100;
 }
 
 #bravo{
@@ -71,10 +82,11 @@ p{
     margin: 0 auto;
     text-align: center;
     font-size: 50px;
-    margin-top: 5%;
+    margin: 5% 26%;
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
+    width: 44%:
 }
 
 #continuer{
@@ -82,7 +94,7 @@ p{
 }
 
 span{
-    color: black;
+    color: white;
 }
 
 ul{
@@ -99,15 +111,34 @@ li{
     width: 100%;
     text-align: left;
     display: flex;
-    color: black;
+    color: white;
     font-size: 20px;
+}
+
+input{
+    font-family: 'Arcade', sans-serif;
+    color: black;
+    border: solid 2px red;
+    padding: 7px 15px;
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 60px;
+    text-align: center;
+}
+
+button{
+    font-family: 'Arcade', sans-serif;
+    color: black;
+    background: white;
+    padding: 4px 10px;
+    background: rgb(67, 255, 255);
 }
 
 #erreurnombre{
     color: red;
     margin: 2px 0;
     font-size: 16px;
-
 }
 
 #diverreur{
